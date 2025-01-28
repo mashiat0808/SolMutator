@@ -129,7 +129,7 @@ SolMutator  creates a ```solmutator\results``` folder in the root directory of t
 
 
 
-# Mutation Operators 👾
+# Mutation Operators 
 
 SolMutator includes 25 Solidity-specific operators and 19 Traditional operators.
 
