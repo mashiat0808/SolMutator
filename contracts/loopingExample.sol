@@ -11,7 +11,7 @@ contract LoopCheck1Contract {
         localArr[2] = 3;
 
         uint length = localArr.length;
-        for (uint i; i < length;) {
+        for (uint i; i   <  length;) {
             unchecked { ++i; }
         }   
     }

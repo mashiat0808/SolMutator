@@ -42,8 +42,7 @@ const mutGen = new mutationGenerator.MutationOperators([
 function setup(callback) {
   reporter.logSetup();
 
-  if (solmutatorConfig.testingFramework !== "truffle" && solmutatorConfig.testingFramework !== "hardhat"
-    && solmutatorConfig.testingFramework !== "forge" && solmutatorConfig.testingFramework !== "brownie" && solmutatorConfig.testingFramework !== "custom") {
+  if (solmutatorConfig.testingFramework !== "hardhat") {
     console.error(chalk.red("Error: The specified testing framework is not valid. \n The available options are:\n - brownie \n - hardhat \n - forge \n - truffle \n - custom"));
     process.exit(1);
   }

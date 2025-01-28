@@ -17,28 +17,11 @@ function spawnCompile(packageManager) {
   const execute = (packageManager === "npm") ? "npx" : "yarn";
   const executeCmd = (process.platform === "win32") ? execute + ".cmd" : execute;
 
-  //Truffle
-  if (testingFramework === "truffle") {
-    compileChild = spawnSync(executeCmd, ["truffle", "compile"], { stdio: "inherit", cwd: rootDir });
-  }
   //Hardhat
-  else if (testingFramework === "hardhat") {
+  if (testingFramework === "hardhat") {
     compileChild = spawnSync(executeCmd, ["hardhat", "compile"], { stdio: "inherit", cwd: rootDir });
   }
-  //Brownie
-  else if (testingFramework === "brownie") {
-    compileChild = spawnSync("brownie", ["compile"], { stdio: "inherit", cwd: rootDir });
-  }
-  //Forge
-  else if (testingFramework === "forge") {
-    compileChild = spawnSync(testingFramework, ["build"], { stdio: "inherit", cwd: rootDir });
-  }
-  //Custom
-  else if (testingFramework === "custom") {
-    const run = (packageManager === "npm") ? "run-script" : "run";
-    const packageManagerCmd = (process.platform === "win32") ? packageManager + ".cmd" : packageManager;
-    compileChild = spawnSync(packageManagerCmd, [run, "compile"], { stdio: "inherit", cwd: rootDir });
-  } else {
+   else {
     console.log(chalk.red("Error: The selected testing framework is not valid."));
     process.exit(1);
   }
@@ -57,50 +40,15 @@ function spawnTest(packageManager, testFiles) {
   const execute = (packageManager === "npm") ? "npx" : "yarn";
   const executeCmd = (process.platform === "win32") ? execute + ".cmd" : execute;
 
-  //Truffle
-  if (testingFramework === "truffle") {
-    if (skipTests.length === 0) {
-      testChild = spawnSync(executeCmd, ["truffle", "test", "-b"], { stdio: "inherit", cwd: rootDir, timeout: testingTimeOutInSec * 1000 });
-    } else {
-      testChild = spawnSync(executeCmd, ["truffle", "test", "-b", ...testFiles], { stdio: "inherit", cwd: rootDir, timeout: testingTimeOutInSec * 1000 });
-    }
-  }
-  //Brownie
-  else if (testingFramework === "brownie") {
-    if (skipTests.length === 0) {
-      testChild = spawnSync("brownie", ["test", "--exitfirst"], { stdio: "inherit", cwd: rootDir, timeout: testingTimeOutInSec * 1000 });
-    } else {
-      testChild = spawnSync("brownie", ["test", ...testFiles, "--exitfirst"], { stdio: "inherit", cwd: rootDir, timeout: testingTimeOutInSec * 1000 });
-    }
-  }
   //Hardhat
-  else if (testingFramework === "hardhat") {
+   if (testingFramework === "hardhat") {
     if (skipTests.length === 0) {
       testChild = spawnSync(executeCmd, ["hardhat", "test", "--bail"], { stdio: "inherit", cwd: rootDir, timeout: testingTimeOutInSec * 1000 });
     } else {
       testChild = spawnSync(executeCmd, ["hardhat", "test", "--bail", ...testFiles], { stdio: "inherit", cwd: rootDir, timeout: testingTimeOutInSec * 1000 });
     }
   }
-  //Forge
-  else if (testingFramework === "forge") {
-    if (skipTests.length === 0) {
-      testChild = spawnSync("forge", ['t', '--fail-fast'], { stdio: "inherit", cwd: rootDir, timeout: testingTimeOutInSec * 1000 });
-    } else {
-      let relativeTestfiles = []
-      for (let i = 0; i < testFiles.length; i++) {
-        const tf = testFiles[i].split(rootDir + '/')[1];
-        relativeTestfiles.push(tf);
-      }
-      let arguments = "{" + relativeTestfiles.join() + '}';
-      testChild = spawnSync("forge", ['t', '--fail-fast', '--match-path', arguments], { stdio: "inherit", cwd: rootDir, timeout: testingTimeOutInSec * 1000 });
-    }
-  }
-  //Custom
-  else if (testingFramework === "custom") {
-    const run = (packageManager === "npm") ? "run-script" : "run";
-    const packageManagerCmd = (process.platform === "win32") ? packageManager + ".cmd" : packageManager;
-    testChild = spawnSync(packageManagerCmd, [run, "test"], { stdio: "inherit", cwd: rootDir, timeout: (testingTimeOutInSec * 1000) });
-  }
+ 
   else {
     console.log(chalk.red("Error: The selected testing framework is not valid."));
     process.exit(1);
@@ -118,7 +66,7 @@ function spawnTest(packageManager, testFiles) {
 /**
  * Spawns a new blockchain node instance
  * @param packageManager The package manager used within the SUT (npm or yarn) 
- */
+ **/
 function spawnNetwork(packageManager) {
   var child;
   const execute = (packageManager === "npm") ? "npx" : "yarn";
@@ -139,6 +87,7 @@ function spawnNetwork(packageManager) {
       }
     };
   }
+    
   return child;
 }
 
@@ -146,6 +95,7 @@ function spawnNetwork(packageManager) {
  * Kills a ganache process (port 8545)
  * @param {*} nodeChild 
  */
+
 function killNetwork(nodeChild) {
   if (solmutatorConfig.network === "ganache") {
     if (process.platform === "win32") {
