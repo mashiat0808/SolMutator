@@ -1,0 +1,83 @@
+Hash,File,Operator,Start,End,StartLine,EndLine,Original,Replacement,Status,Time(ms)
+m9094b656,/home/farin/SolMutator/contracts/loopingExample.sol,BOR,399,402,14,14," < "," <= ",live,1411
+m8247918d,/home/farin/SolMutator/contracts/loopingExample.sol,BOR,399,402,14,14," < "," >=  ",live,1382
+m6954bc30,/home/farin/SolMutator/contracts/loopingExample.sol,BOR,399,402,14,14," < "," > ",live,1383
+m7214e7a1,/home/farin/SolMutator/contracts/loopingExample.sol,BOR,399,402,14,14," < "," != ",live,1399
+m32b3921e,/home/farin/SolMutator/contracts/loopingExample.sol,BOR,399,402,14,14," < "," == ",live,1445
+ma53c28a1,/home/farin/SolMutator/contracts/loopingExample.sol,BOR,818,821,31,31," < "," <= ",live,1375
+mbc6813c5,/home/farin/SolMutator/contracts/loopingExample.sol,BOR,818,821,31,31," < "," >=  ",live,1401
+m531e8b0d,/home/farin/SolMutator/contracts/loopingExample.sol,BOR,818,821,31,31," < "," > ",live,1359
+m74fb54b6,/home/farin/SolMutator/contracts/loopingExample.sol,BOR,818,821,31,31," < "," != ",live,1371
+m99f798b0,/home/farin/SolMutator/contracts/loopingExample.sol,BOR,818,821,31,31," < "," == ",live,1328
+m22dd072a,/home/farin/SolMutator/contracts/loopingExample.sol,BOR,1239,1243,48,48," <= ","  < ",live,1444
+me4d66e52,/home/farin/SolMutator/contracts/loopingExample.sol,BOR,1239,1243,48,48," <= ","  > ",live,1166
+mc5888ba1,/home/farin/SolMutator/contracts/loopingExample.sol,BOR,1239,1243,48,48," <= "," >= ",live,1150
+mb122ca89,/home/farin/SolMutator/contracts/loopingExample.sol,BOR,1239,1243,48,48," <= "," != ",live,1141
+mef7ab851,/home/farin/SolMutator/contracts/loopingExample.sol,BOR,1239,1243,48,48," <= "," == ",live,1163
+m776066df,/home/farin/SolMutator/contracts/loopingExample.sol,DLR,130,155,6,6,uint256[] memory localArr,uint256[] storage localArr,stillborn,407
+mcaab1bb1,/home/farin/SolMutator/contracts/loopingExample.sol,DLR,539,564,22,22,uint256[] memory localArr,uint256[] storage localArr,stillborn,454
+me8c18069,/home/farin/SolMutator/contracts/loopingExample.sol,DLR,957,982,39,39,uint256[] memory localArr,uint256[] storage localArr,stillborn,400
+m7634eaeb,/home/farin/SolMutator/contracts/loopingExample.sol,FVR,91,120,5,5,"function loopCheck1() public ","function loopCheck1() external ",live,1164
+m0987866f,/home/farin/SolMutator/contracts/loopingExample.sol,FVR,91,120,5,5,"function loopCheck1() public ","function loopCheck1() internal ",live,1163
+m281fcd28,/home/farin/SolMutator/contracts/loopingExample.sol,FVR,91,120,5,5,"function loopCheck1() public ","function loopCheck1() private ",live,1138
+ma139eb9c,/home/farin/SolMutator/contracts/loopingExample.sol,FVR,500,529,21,21,"function loopCheck2() public ","function loopCheck2() external ",live,1138
+ma78b1fd1,/home/farin/SolMutator/contracts/loopingExample.sol,FVR,500,529,21,21,"function loopCheck2() public ","function loopCheck2() internal ",live,1131
+m17db34f5,/home/farin/SolMutator/contracts/loopingExample.sol,FVR,500,529,21,21,"function loopCheck2() public ","function loopCheck2() private ",live,1133
+m7b5fcd7f,/home/farin/SolMutator/contracts/loopingExample.sol,FVR,918,947,38,38,"function loopCheck3() public ","function loopCheck3() external ",live,1146
+mff5b5c90,/home/farin/SolMutator/contracts/loopingExample.sol,FVR,918,947,38,38,"function loopCheck3() public ","function loopCheck3() internal ",live,1156
+m1eb23948,/home/farin/SolMutator/contracts/loopingExample.sol,FVR,918,947,38,38,"function loopCheck3() public ","function loopCheck3() private ",live,1148
+m0800c375,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,172,173,6,6,3,2,live,1127
+mdd70d6d5,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,172,173,6,6,3,4,live,1160
+mfd34bc2c,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,279,280,9,9,0,1,live,1144
+m68bc7f80,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,284,285,9,9,1,0,live,1147
+m8c24afa6,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,284,285,9,9,1,2,live,1139
+m84676d53,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,304,305,10,10,1,0,live,1137
+m522afce6,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,304,305,10,10,1,2,live,1151
+md7f6b67f,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,309,310,10,10,2,1,live,1155
+m67b79974,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,309,310,10,10,2,3,live,1139
+mcb72362c,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,329,330,11,11,2,1,live,1138
+m7eecb05b,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,329,330,11,11,2,3,live,1136
+md32f0ad1,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,334,335,11,11,3,2,live,1138
+m92824e44,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,334,335,11,11,3,4,live,1145
+m5aa25869,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,581,582,22,22,3,2,live,1135
+m7cff0ff8,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,581,582,22,22,3,4,live,1147
+m4788fe9a,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,688,689,25,25,1,0,live,1154
+m5ce4e59d,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,688,689,25,25,1,2,live,1164
+m5f5e7730,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,693,694,25,25,1,0,live,1156
+m85bfd788,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,693,694,25,25,1,2,live,1177
+me9255157,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,713,714,26,26,1,0,live,1159
+m9b2b958b,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,713,714,26,26,1,2,live,1157
+m2e600ced,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,718,719,26,26,2,1,live,1146
+mff756ff7,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,718,719,26,26,2,3,live,1122
+m9794248d,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,738,739,27,27,2,1,live,1166
+m756590de,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,738,739,27,27,2,3,live,1145
+m68f7dd96,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,743,744,27,27,3,2,live,1137
+m3e634285,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,743,744,27,27,3,4,live,1141
+m12bb8589,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,999,1000,39,39,3,2,live,1136
+m1dc0fab9,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,999,1000,39,39,3,4,live,1141
+m533a9aad,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,1106,1107,42,42,0,1,live,1136
+mc4b8aebe,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,1111,1112,42,42,1,0,live,1148
+m7d6b6ce6,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,1111,1112,42,42,1,2,live,1123
+m64f1ce18,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,1131,1132,43,43,1,0,live,1165
+m5ff81e63,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,1131,1132,43,43,1,2,live,1142
+m12489b80,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,1136,1137,43,43,2,1,live,1172
+me64b5b20,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,1136,1137,43,43,2,3,live,1124
+m680f5c19,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,1156,1157,44,44,2,1,live,1141
+m9dddf482,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,1156,1157,44,44,2,3,live,1147
+m01c76e17,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,1161,1162,44,44,3,2,live,1130
+m389efa46,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,1161,1162,44,44,3,4,live,1129
+m27436a64,/home/farin/SolMutator/contracts/loopingExample.sol,ILR,1235,1236,48,48,0,1,live,1149
+m5e2e0c40,/home/farin/SolMutator/contracts/loopingExample.sol,LSC,398,408,14,14,i < length,true,live,1144
+m55fb37fa,/home/farin/SolMutator/contracts/loopingExample.sol,LSC,398,408,14,14,i < length,false,live,1153
+m8d8783b8,/home/farin/SolMutator/contracts/loopingExample.sol,LSC,817,827,31,31,i < length,true,live,1126
+m28d0df94,/home/farin/SolMutator/contracts/loopingExample.sol,LSC,817,827,31,31,i < length,false,live,1125
+mcd2817fb,/home/farin/SolMutator/contracts/loopingExample.sol,LSC,1238,1249,48,48,i <= length,true,live,1139
+m2df29da7,/home/farin/SolMutator/contracts/loopingExample.sol,LSC,1238,1249,48,48,i <= length,false,live,1125
+mb35a461d,/home/farin/SolMutator/contracts/loopingExample.sol,UORD,437,439,15,15,++,--,live,1161
+m6472751c,/home/farin/SolMutator/contracts/loopingExample.sol,UORD,437,439,15,15,++," ",live,1142
+m6ba4cdce,/home/farin/SolMutator/contracts/loopingExample.sol,UORD,856,858,32,32,++,--,live,1187
+m4d48da5e,/home/farin/SolMutator/contracts/loopingExample.sol,UORD,856,858,32,32,++," ",live,1142
+m795a7daa,/home/farin/SolMutator/contracts/loopingExample.sol,UORD,1252,1254,48,48,++,--,live,1131
+md90b239f,/home/farin/SolMutator/contracts/loopingExample.sol,UORD,1252,1254,48,48,++," ",live,1142
+mefe9e23c,/home/farin/SolMutator/contracts/loopingExample.sol,UORD,1282,1284,49,49,++,--,live,1127
+m96498479,/home/farin/SolMutator/contracts/loopingExample.sol,UORD,1282,1284,49,49,++," ",live,1131
