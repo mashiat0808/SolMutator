@@ -7,7 +7,7 @@ SolMutator is a mutation testing tool for Solidity Smart Contracts. It features 
 
 To install SolMutator, run ```git clone https://github.com/mashiat0808/SolMutator.git```
 
-# Configuration ⚙️
+# Configuration 
 Before using SolMutator, you need to define your preferred settings in a ```solmutator-config.js``` file located in the root directory of the project. This configuration file is automatically created during the installation process.
 
 Here's a simple example of ```solmutator-config.js```:

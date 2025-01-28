@@ -3,7 +3,8 @@
 const yargs = require('yargs')
 const mutationRunner = require('./src/mutationRunner.js')
 const utils = require('./src/utils')
-
+const { spawnSync } = require('child_process'); // Import spawnSync from child_process
+const fs = require("fs");
 yargs
   .usage('$0 <cmd> [args]')
   .command('lookup', 'generate the mutations without starting the testing process', mutationRunner.lookup)
@@ -44,5 +45,23 @@ yargs
     mutationRunner.disable(argv.ID)
   })
   .command('restore', 'restore the SUT files', utils.restore)
+  .command('coverage', 'run hardhat coverage and save results to README.md', () => {
+    try {
+      // Run the coverage command and capture the output
+      const result = spawnSync('npx', ['hardhat', 'coverage'], { encoding: 'utf-8' });
+
+      if (result.error) {
+        console.error('Error running coverage:', result.error.message);
+        process.exit(1);
+      }
+
+      // Write the output to README.md
+      fs.writeFileSync('README.md', `# Coverage Report\n\n\`\`\`\n${result.stdout}\n\`\`\`\n`, 'utf-8');
+      console.log('Coverage report saved to README.md');
+    } catch (err) {
+      console.error('An error occurred:', err.message);
+      process.exit(1);
+    }
+  })
   .help()
-  .argv
+  .argv;

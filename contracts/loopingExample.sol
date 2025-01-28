@@ -11,7 +11,7 @@ contract LoopCheck1Contract {
         localArr[2] = 3;
 
         uint length = localArr.length;
-        for (uint i; i   <  length;) {
+        for (uint i; i < length;) {
             unchecked { ++i; }
         }   
     }
@@ -22,7 +22,7 @@ contract LoopCheck2Contract {
         uint256[] memory localArr = new uint256[](3); // Declare and initialize the array
 
         // Initialize the array with some values
-        localArr[1] = 1;
+        localArr[0] = 1;
         localArr[1] = 2;
         localArr[2] = 3;
 
@@ -45,7 +45,7 @@ contract LoopCheck3Contract {
 
         
         uint length = localArr.length;
-        for (uint i = 0; i <= length; i++) {
+        for (uint i = 0; i < length; i++) {
             unchecked { ++i; }
         }
     }

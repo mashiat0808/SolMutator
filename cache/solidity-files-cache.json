@@ -2,18 +2,19 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/farin/SolMutator/contracts/loopingExample.sol": {
-      "lastModificationDate": 1738084356499,
-      "contentHash": "4aaa3cf79061183be366876d4bd3f304",
+      "lastModificationDate": 1738090585741,
+      "contentHash": "3ddb0fd49034928aef25cb5e453f57a2",
       "sourceName": "contracts/loopingExample.sol",
       "solcConfig": {
         "version": "0.8.27",
         "settings": {
           "optimizer": {
-            "enabled": true,
+            "enabled": false,
             "runs": 200
           },
           "metadata": {
-            "bytecodeHash": "none"
+            "bytecodeHash": "none",
+            "useLiteralContent": false
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -40,6 +41,413 @@
         "LoopCheck1Contract",
         "LoopCheck2Contract",
         "LoopCheck3Contract"
+      ]
+    },
+    "/home/farin/SolMutator/contracts/DataLoggingExample.sol": {
+      "lastModificationDate": 1738090367581,
+      "contentHash": "37dca32f350faaed4d6898b89b97fe2e",
+      "sourceName": "contracts/DataLoggingExample.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "none",
+            "useLiteralContent": false
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "EventDataLogging"
+      ]
+    },
+    "/home/farin/SolMutator/contracts/Initiazlie&Reinitialize.sol": {
+      "lastModificationDate": 1738090482443,
+      "contentHash": "fd94219bdd913ac8c30bdaca31f9a625",
+      "sourceName": "contracts/Initiazlie&Reinitialize.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "none",
+            "useLiteralContent": false
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "GasCostExample"
+      ]
+    },
+    "/home/farin/SolMutator/contracts/OperatorExample.sol": {
+      "lastModificationDate": 1738090647873,
+      "contentHash": "10ae9fb6ee2382762b6aca3990d9f3fa",
+      "sourceName": "contracts/OperatorExample.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "none",
+            "useLiteralContent": false
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.16"
+      ],
+      "artifacts": [
+        "Operator1",
+        "Operator2",
+        "Operator3",
+        "Operator4"
+      ]
+    },
+    "/home/farin/SolMutator/contracts/bytes32vsStringExample.sol": {
+      "lastModificationDate": 1738090322109,
+      "contentHash": "77abcb7efae64e855453202b0c7ecab4",
+      "sourceName": "contracts/bytes32vsStringExample.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "none",
+            "useLiteralContent": false
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "GasComparisonContract"
+      ]
+    },
+    "/home/farin/SolMutator/contracts/checkedExample.sol": {
+      "lastModificationDate": 1738090355892,
+      "contentHash": "12eb1a0c0052cf60523c061609a5b674",
+      "sourceName": "contracts/checkedExample.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "none",
+            "useLiteralContent": false
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.16"
+      ],
+      "artifacts": [
+        "WithUnchecked",
+        "WithoutUnchecked"
+      ]
+    },
+    "/home/farin/SolMutator/contracts/fixedvsVariableExample.sol": {
+      "lastModificationDate": 1738090407464,
+      "contentHash": "ee6db6b126dd44737338ef3439a791d8",
+      "sourceName": "contracts/fixedvsVariableExample.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "none",
+            "useLiteralContent": false
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "VariableOptimization"
+      ]
+    },
+    "/home/farin/SolMutator/contracts/inheritenceExample.sol": {
+      "lastModificationDate": 1738090423769,
+      "contentHash": "04e49e091eaa922bb38c9b70668950c2",
+      "sourceName": "contracts/inheritenceExample.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "none",
+            "useLiteralContent": false
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.18"
+      ],
+      "artifacts": [
+        "Child",
+        "Example",
+        "Parent"
+      ]
+    },
+    "/home/farin/SolMutator/contracts/refundsExample.sol": {
+      "lastModificationDate": 1738090695987,
+      "contentHash": "b8407ccc9727d021449b77cb03e69fd5",
+      "sourceName": "contracts/refundsExample.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "none",
+            "useLiteralContent": false
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.18"
+      ],
+      "artifacts": [
+        "GasRefundExample"
+      ]
+    },
+    "/home/farin/SolMutator/contracts/returnValueExample.sol": {
+      "lastModificationDate": 1738090721157,
+      "contentHash": "a4d8d16b80a1e5f15f11ee4435e03f26",
+      "sourceName": "contracts/returnValueExample.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "none",
+            "useLiteralContent": false
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "WithStreamlining",
+        "WithoutStreamlining"
+      ]
+    },
+    "/home/farin/SolMutator/contracts/uint8VSuint256.sol": {
+      "lastModificationDate": 1738090788531,
+      "contentHash": "4cbbc81f716ed3c8ecec560df5a4b111",
+      "sourceName": "contracts/uint8VSuint256.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "none",
+            "useLiteralContent": false
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "GasComparison"
       ]
     }
   }

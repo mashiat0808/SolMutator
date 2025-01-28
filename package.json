@@ -26,5 +26,8 @@
     "recursive-copy": "^2.0.14",
     "sha1": "^1.1.1",
     "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "solidity-coverage": "^0.8.14"
   }
 }

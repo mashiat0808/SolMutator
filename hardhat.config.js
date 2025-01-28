@@ -1,5 +1,6 @@
 
 /** @type import('hardhat/config').HardhatUserConfig */
+require('solidity-coverage')
 module.exports = {
     solidity: {
       compilers: [
