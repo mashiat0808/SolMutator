@@ -4,7 +4,7 @@ module.exports = {
   testDir: 'test',
   skipContracts: [],
   skipTests: [],
-  testingTimeOutInSec: 300,
+  testingTimeOutInSec: 10,
   network: "none",
   testingFramework: "hardhat",
   minimal: false,

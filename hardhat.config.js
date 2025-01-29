@@ -1,6 +1,7 @@
 
 /** @type import('hardhat/config').HardhatUserConfig */
 require('solidity-coverage')
+require('@openzeppelin/hardhat-upgrades');
 module.exports = {
     solidity: {
       compilers: [

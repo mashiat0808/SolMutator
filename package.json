@@ -12,11 +12,13 @@
     "postinstall": "node ./scripts/init.js"
   },
   "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "^5.2.0",
     "@solidity-parser/parser": "^0.15.0",
     "app-root-path": "3.1.0",
     "chalk": "^4.1.2",
     "diff": "^5.0.0",
     "excel4node": "^1.7.2",
+    "express": "^4.21.2",
     "fast-csv": "4.3.6",
     "fs-extra": "^10.1.0",
     "glob": "8.1.0",
@@ -28,6 +30,9 @@
     "yargs": "^17.5.1"
   },
   "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "@openzeppelin/hardhat-upgrades": "^3.9.0",
+    "ethers": "^6.13.5",
     "solidity-coverage": "^0.8.14"
   }
 }
