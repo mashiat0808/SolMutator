@@ -553,8 +553,8 @@
       ]
     },
     "/home/farin/SolMutator/contracts/Example.sol": {
-      "lastModificationDate": 1738155019610,
-      "contentHash": "1a09e033079dd95e463db7d2332bd2cd",
+      "lastModificationDate": 1738158623727,
+      "contentHash": "4d5634998f8505ed50c77d1f86570452",
       "sourceName": "contracts/Example.sol",
       "solcConfig": {
         "version": "0.8.27",

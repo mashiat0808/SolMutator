@@ -1,17 +1,18 @@
 Hash,File,Operator,Start,End,StartLine,EndLine,Original,Replacement,Status,Time(ms)
-m078ceb17,/home/farin/SolMutator/contracts/Example.sol,BOR,172,177,8,8," >=  ","  >  ",untested,0
-m2a66f09e,/home/farin/SolMutator/contracts/Example.sol,BOR,172,177,8,8," >=  ","  <  ",untested,0
-me8346cba,/home/farin/SolMutator/contracts/Example.sol,BOR,172,177,8,8," >=  "," <=  ",untested,0
-m78c83259,/home/farin/SolMutator/contracts/Example.sol,BOR,172,177,8,8," >=  "," !=  ",untested,0
-m540ce425,/home/farin/SolMutator/contracts/Example.sol,BOR,172,177,8,8," >=  "," ==  ",untested,0
-m14411049,/home/farin/SolMutator/contracts/Example.sol,EHC,158,212,8,8,"require(_value >=  0, ""Value must be greater than 0"");","/* require(_value >=  0, ""Value must be greater than 0""); */",untested,0
-mcfbb6f60,/home/farin/SolMutator/contracts/Example.sol,FVR,107,148,7,7,"function setValue(uint256 _value) public ","function setValue(uint256 _value) external ",untested,0
-m11ac0cfc,/home/farin/SolMutator/contracts/Example.sol,FVR,107,148,7,7,"function setValue(uint256 _value) public ","function setValue(uint256 _value) internal ",untested,0
-m5a481202,/home/farin/SolMutator/contracts/Example.sol,FVR,107,148,7,7,"function setValue(uint256 _value) public ","function setValue(uint256 _value) private ",untested,0
-m6c10be53,/home/farin/SolMutator/contracts/Example.sol,FVR,248,277,12,12,"function resetValue() public ","function resetValue() external ",untested,0
-me1e7ad3a,/home/farin/SolMutator/contracts/Example.sol,FVR,248,277,12,12,"function resetValue() public ","function resetValue() internal ",untested,0
-m11ce0ecd,/home/farin/SolMutator/contracts/Example.sol,FVR,248,277,12,12,"function resetValue() public ","function resetValue() private ",untested,0
-mbccc6c10,/home/farin/SolMutator/contracts/Example.sol,ILR,177,178,8,8,0,1,untested,0
-m7ad5f478,/home/farin/SolMutator/contracts/Example.sol,ILR,295,296,13,13,0,1,untested,0
-m3341d660,/home/farin/SolMutator/contracts/Example.sol,VVR,80,100,5,5,uint256 public value,uint256 internal value,untested,0
-m1a386969,/home/farin/SolMutator/contracts/Example.sol,VVR,80,100,5,5,uint256 public value,uint256 private value,untested,0
+m078ceb17,/home/farin/SolMutator/contracts/Example.sol,BOR,172,177,8,8," >=  ","  >  ",live,1739
+m2a66f09e,/home/farin/SolMutator/contracts/Example.sol,BOR,172,177,8,8," >=  ","  <  ",live,1664
+me8346cba,/home/farin/SolMutator/contracts/Example.sol,BOR,172,177,8,8," >=  "," <=  ",live,1727
+m78c83259,/home/farin/SolMutator/contracts/Example.sol,BOR,172,177,8,8," >=  "," !=  ",live,1720
+m540ce425,/home/farin/SolMutator/contracts/Example.sol,BOR,172,177,8,8," >=  "," ==  ",live,1735
+m4c134e52,/home/farin/SolMutator/contracts/Example.sol,EHC,158,212,8,8,"require(_value >=  1, ""Value must be greater than 0"");","/* require(_value >=  1, ""Value must be greater than 0""); */",live,1741
+mcfbb6f60,/home/farin/SolMutator/contracts/Example.sol,FVR,107,148,7,7,"function setValue(uint256 _value) public ","function setValue(uint256 _value) external ",live,1747
+m11ac0cfc,/home/farin/SolMutator/contracts/Example.sol,FVR,107,148,7,7,"function setValue(uint256 _value) public ","function setValue(uint256 _value) internal ",live,1734
+m5a481202,/home/farin/SolMutator/contracts/Example.sol,FVR,107,148,7,7,"function setValue(uint256 _value) public ","function setValue(uint256 _value) private ",live,1735
+m6c10be53,/home/farin/SolMutator/contracts/Example.sol,FVR,248,277,12,12,"function resetValue() public ","function resetValue() external ",live,1749
+me1e7ad3a,/home/farin/SolMutator/contracts/Example.sol,FVR,248,277,12,12,"function resetValue() public ","function resetValue() internal ",live,1734
+m11ce0ecd,/home/farin/SolMutator/contracts/Example.sol,FVR,248,277,12,12,"function resetValue() public ","function resetValue() private ",live,1738
+m3c61ad72,/home/farin/SolMutator/contracts/Example.sol,ILR,177,178,8,8,1,0,live,1822
+m282876ff,/home/farin/SolMutator/contracts/Example.sol,ILR,177,178,8,8,1,2,live,1855
+m7ad5f478,/home/farin/SolMutator/contracts/Example.sol,ILR,295,296,13,13,0,1,live,1736
+m3341d660,/home/farin/SolMutator/contracts/Example.sol,VVR,80,100,5,5,uint256 public value,uint256 internal value,live,1660
+m1a386969,/home/farin/SolMutator/contracts/Example.sol,VVR,80,100,5,5,uint256 public value,uint256 private value,live,1729

@@ -9,8 +9,8 @@
 			"original": " >=  ",
 			"replace": "  >  ",
 			"operator": "BOR",
-			"status": null,
-			"testingTime": null,
+			"status": "live",
+			"testingTime": 1739,
 			"id": "m078ceb17"
 		},
 		{
@@ -22,8 +22,8 @@
 			"original": " >=  ",
 			"replace": "  <  ",
 			"operator": "BOR",
-			"status": null,
-			"testingTime": null,
+			"status": "live",
+			"testingTime": 1664,
 			"id": "m2a66f09e"
 		},
 		{
@@ -35,8 +35,8 @@
 			"original": " >=  ",
 			"replace": " <=  ",
 			"operator": "BOR",
-			"status": null,
-			"testingTime": null,
+			"status": "live",
+			"testingTime": 1727,
 			"id": "me8346cba"
 		},
 		{
@@ -48,8 +48,8 @@
 			"original": " >=  ",
 			"replace": " !=  ",
 			"operator": "BOR",
-			"status": null,
-			"testingTime": null,
+			"status": "live",
+			"testingTime": 1720,
 			"id": "m78c83259"
 		},
 		{
@@ -61,8 +61,8 @@
 			"original": " >=  ",
 			"replace": " ==  ",
 			"operator": "BOR",
-			"status": null,
-			"testingTime": null,
+			"status": "live",
+			"testingTime": 1735,
 			"id": "m540ce425"
 		},
 		{
@@ -71,12 +71,12 @@
 			"end": 212,
 			"startLine": 8,
 			"endLine": 8,
-			"original": "require(_value >=  0, \"Value must be greater than 0\");",
-			"replace": "/* require(_value >=  0, \"Value must be greater than 0\"); */",
+			"original": "require(_value >=  1, \"Value must be greater than 0\");",
+			"replace": "/* require(_value >=  1, \"Value must be greater than 0\"); */",
 			"operator": "EHC",
-			"status": null,
-			"testingTime": null,
-			"id": "m14411049"
+			"status": "live",
+			"testingTime": 1741,
+			"id": "m4c134e52"
 		},
 		{
 			"file": "/home/farin/SolMutator/contracts/Example.sol",
@@ -87,8 +87,8 @@
 			"original": "function setValue(uint256 _value) public ",
 			"replace": "function setValue(uint256 _value) external ",
 			"operator": "FVR",
-			"status": null,
-			"testingTime": null,
+			"status": "live",
+			"testingTime": 1747,
 			"id": "mcfbb6f60"
 		},
 		{
@@ -100,8 +100,8 @@
 			"original": "function setValue(uint256 _value) public ",
 			"replace": "function setValue(uint256 _value) internal ",
 			"operator": "FVR",
-			"status": null,
-			"testingTime": null,
+			"status": "live",
+			"testingTime": 1734,
 			"id": "m11ac0cfc"
 		},
 		{
@@ -113,8 +113,8 @@
 			"original": "function setValue(uint256 _value) public ",
 			"replace": "function setValue(uint256 _value) private ",
 			"operator": "FVR",
-			"status": null,
-			"testingTime": null,
+			"status": "live",
+			"testingTime": 1735,
 			"id": "m5a481202"
 		},
 		{
@@ -126,8 +126,8 @@
 			"original": "function resetValue() public ",
 			"replace": "function resetValue() external ",
 			"operator": "FVR",
-			"status": null,
-			"testingTime": null,
+			"status": "live",
+			"testingTime": 1749,
 			"id": "m6c10be53"
 		},
 		{
@@ -139,8 +139,8 @@
 			"original": "function resetValue() public ",
 			"replace": "function resetValue() internal ",
 			"operator": "FVR",
-			"status": null,
-			"testingTime": null,
+			"status": "live",
+			"testingTime": 1734,
 			"id": "me1e7ad3a"
 		},
 		{
@@ -152,8 +152,8 @@
 			"original": "function resetValue() public ",
 			"replace": "function resetValue() private ",
 			"operator": "FVR",
-			"status": null,
-			"testingTime": null,
+			"status": "live",
+			"testingTime": 1738,
 			"id": "m11ce0ecd"
 		},
 		{
@@ -162,12 +162,25 @@
 			"end": 178,
 			"startLine": 8,
 			"endLine": 8,
-			"original": "0",
-			"replace": "1",
+			"original": "1",
+			"replace": "0",
 			"operator": "ILR",
-			"status": null,
-			"testingTime": null,
-			"id": "mbccc6c10"
+			"status": "live",
+			"testingTime": 1822,
+			"id": "m3c61ad72"
+		},
+		{
+			"file": "/home/farin/SolMutator/contracts/Example.sol",
+			"start": 177,
+			"end": 178,
+			"startLine": 8,
+			"endLine": 8,
+			"original": "1",
+			"replace": "2",
+			"operator": "ILR",
+			"status": "live",
+			"testingTime": 1855,
+			"id": "m282876ff"
 		},
 		{
 			"file": "/home/farin/SolMutator/contracts/Example.sol",
@@ -178,8 +191,8 @@
 			"original": "0",
 			"replace": "1",
 			"operator": "ILR",
-			"status": null,
-			"testingTime": null,
+			"status": "live",
+			"testingTime": 1736,
 			"id": "m7ad5f478"
 		},
 		{
@@ -191,8 +204,8 @@
 			"original": "uint256 public value",
 			"replace": "uint256 internal value",
 			"operator": "VVR",
-			"status": null,
-			"testingTime": null,
+			"status": "live",
+			"testingTime": 1660,
 			"id": "m3341d660"
 		},
 		{
@@ -204,8 +217,8 @@
 			"original": "uint256 public value",
 			"replace": "uint256 private value",
 			"operator": "VVR",
-			"status": null,
-			"testingTime": null,
+			"status": "live",
+			"testingTime": 1729,
 			"id": "m1a386969"
 		}
 	]

@@ -16,6 +16,7 @@
     "@solidity-parser/parser": "^0.15.0",
     "app-root-path": "3.1.0",
     "chalk": "^4.1.2",
+    "csv-parser": "^3.1.0",
     "diff": "^5.0.0",
     "excel4node": "^1.7.2",
     "express": "^4.21.2",
@@ -27,6 +28,7 @@
     "postinstall": "^0.8.0",
     "recursive-copy": "^2.0.14",
     "sha1": "^1.1.1",
+    "xlsx": "^0.18.5",
     "yargs": "^17.5.1"
   },
   "devDependencies": {

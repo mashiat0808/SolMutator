@@ -2,6 +2,8 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const { exec } = require("child_process");
+const csvParser = require("csv-parser");
+const XLSX = require("xlsx");
 
 const app = express();
 const PORT = 3000;
@@ -10,11 +12,10 @@ const PORT = 3000;
 app.use(express.json());
 app.use("/coverage", express.static(path.join(__dirname, "coverage")));
 
-
 // Path to the operators configuration file
 const operatorsConfigPath = path.join(__dirname, "src", "operators.config.json");
 
-const resultsDir = path.join(__dirname, 'solmutator/results');
+const resultsDir = path.join(__dirname, "solmutator/results");
 
 // Serve the static HTML file for the root route
 app.get("/", (req, res) => {
@@ -80,6 +81,7 @@ app.get("/", (req, res) => {
                 <button class="button" onclick="runCommand('test')">Test</button>
                 <a href="/operators" class="button">Manage Operators</a>
                 <a href="/coverage/index.html" class="button">Coverage</a>
+                <a href="/reports" class="button">Reports</a>
 
                 <div id="output" class="output"></div>
             </div>
@@ -112,19 +114,6 @@ app.get("/", (req, res) => {
         </html>
     `);
 });
-
-app.use('/results', express.static(resultsDir));
-
-app.get('/reports', (req, res) => {
-    const fs = require('fs');
-    fs.readdir(resultsDir, (err, files) => {
-        if (err) {
-            return res.status(500).json({ error: "Failed to load reports" });
-        }
-        res.json(files);
-    });
-});
-
 // Serve the operators management page
 app.get("/operators", (req, res) => {
     try {
@@ -329,6 +318,206 @@ app.post("/run-command", (req, res) => {
         res.send(stdout); // Send the CLI output back to the frontend
     });
 });
+
+// Serve the reports page
+app.get("/reports", async (req, res) => {
+    const mutationsPath = path.join(resultsDir, "mutations.json");
+    const operatorsPath = path.join(resultsDir, "operators.xlsx");
+    const resultsCsvPath = path.join(resultsDir, "results.csv");
+    const logPath = path.join(resultsDir, "solmutator-log.txt");
+
+    let mutationsContent = "";
+    let logContent = "";
+    let csvContent = [];
+    let xlsxContent = [];
+
+    // Read mutations.json
+    if (fs.existsSync(mutationsPath)) {
+        mutationsContent = JSON.parse(fs.readFileSync(mutationsPath, "utf-8"));
+    }
+
+    // Read solmutator-log.txt
+    if (fs.existsSync(logPath)) {
+        logContent = fs.readFileSync(logPath, "utf-8");
+    }
+
+    // Read results.csv
+    if (fs.existsSync(resultsCsvPath)) {
+        csvContent = await new Promise((resolve, reject) => {
+            const csvData = [];
+            fs.createReadStream(resultsCsvPath)
+                .pipe(csvParser())
+                .on("data", (row) => csvData.push(row))
+                .on("end", () => resolve(csvData))
+                .on("error", (err) => reject(err));
+        });
+    }
+
+    // Read operators.xlsx
+    if (fs.existsSync(operatorsPath)) {
+        const workbook = XLSX.readFile(operatorsPath);
+        const sheetName = workbook.SheetNames[0];
+        xlsxContent = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+    }
+
+    // Generate HTML for the reports page with collapsible tabs
+    res.send(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Reports</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f5f5f5;
+                    margin: 0;
+                    padding: 2rem;
+                }
+                .container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    background: white;
+                    padding: 2rem;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+                h1 {
+                    color: #333;
+                    margin-bottom: 1rem;
+                }
+                .tabs {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .tab {
+                    margin-bottom: 1rem;
+                }
+                .tab button {
+                    width: 100%;
+                    background: #2563eb;
+                    color: white;
+                    border: none;
+                    padding: 0.75rem;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    font-size: 1rem;
+                    text-align: left;
+                    transition: background 0.2s;
+                }
+                .tab button:hover {
+                    background: #1d4ed8;
+                }
+                .tab-content {
+                    display: none;
+                    padding: 1rem;
+                    background: #f3f4f6;
+                    border-radius: 6px;
+                    margin-top: 0.5rem;
+                    overflow-x: auto;
+                }
+                .tab-content.active {
+                    display: block;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-bottom: 1rem;
+                }
+                th, td {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: left;
+                }
+                th {
+                    background-color: #f4f4f4;
+                }
+                .button {
+                    background: #2563eb;
+                    color: white;
+                    border: none;
+                    padding: 0.75rem 1.5rem;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    font-size: 1rem;
+                    margin: 0.5rem;
+                    transition: background 0.2s;
+                    text-decoration: none; /* Remove underline */
+                    display: inline-block; /* Make it look like a button */
+                }
+                .button:hover {
+                    background: #1d4ed8;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Reports</h1>
+                <div class="tabs">
+                    <div class="tab">
+                        <button onclick="toggleTab('mutations')">Mutations (mutations.json)</button>
+                        <div id="mutations" class="tab-content">
+                            <pre>${JSON.stringify(mutationsContent, null, 2)}</pre>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <button onclick="toggleTab('log')">Log (solmutator-log.txt)</button>
+                        <div id="log" class="tab-content">
+                            <pre>${logContent}</pre>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <button onclick="toggleTab('results')">Results (results.csv)</button>
+                        <div id="results" class="tab-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        ${csvContent.length > 0 ? Object.keys(csvContent[0]).map((key) => `<th>${key}</th>`).join("") : ""}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${csvContent.map((row) => `<tr>${Object.values(row).map((value) => `<td>${value}</td>`).join("")}</tr>`).join("")}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <button onclick="toggleTab('operators')">Operators (operators.xlsx)</button>
+                        <div id="operators" class="tab-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        ${xlsxContent.length > 0 ? Object.keys(xlsxContent[0]).map((key) => `<th>${key}</th>`).join("") : ""}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${xlsxContent.map((row) => `<tr>${Object.values(row).map((value) => `<td>${value}</td>`).join("")}</tr>`).join("")}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <a href="/" class="button">Back to Home</a>
+            </div>
+            <script>
+                function toggleTab(tabId) {
+                    const content = document.getElementById(tabId);
+                    const isActive = content.classList.contains("active");
+                    const allContents = document.querySelectorAll(".tab-content");
+                    allContents.forEach((c) => c.classList.remove("active"));
+                    if (!isActive) {
+                        content.classList.add("active");
+                    }
+                }
+            </script>
+        </body>
+        </html>
+    `);
+});
+
+// Serve static files from the results directory
+app.use("/results", express.static(resultsDir));
 
 // Start the server
 app.listen(PORT, () => {
